@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.function.Function;
 
 public class LamdaFunc {
-    public static <T extends LinkElement2, R> List<R> traversalElementMap(T e, Function<T, R> func) {
+    public static <T extends LinkElement2, R> List<R> traversalElementMap(T e, Function<T, R> mapFunc) {
         List<R> listOfReturn = new ArrayList<R>();
         T checkPoint = e;
         while (true) {
-            R r = func.apply(checkPoint);
+            R r = mapFunc.apply(checkPoint);
             listOfReturn.add(r);
             if (checkPoint.hasNext()) {
                 @SuppressWarnings("unchecked")
